@@ -12,9 +12,13 @@
 ### 从源码使用:
 
 git clone https://github.com/SkyDreamLG/GenshinImpact_Start.git
+
 cd GenshinImpact_Start
+
 pip install requirements.txt
+
 python start.py
+
 
 ### 从release下载:
 
