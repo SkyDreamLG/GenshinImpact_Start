@@ -1,15 +1,5 @@
-import os
 import ctypes
 import sys
-import win32gui
-import win32print
-import win32con
-import cv2
-import numpy as np
-import pyautogui
-from PIL import ImageGrab
-from PIL import Image
-
 
 def is_admin():
     try:
@@ -19,6 +9,15 @@ def is_admin():
 
 
 if is_admin():
+    import os
+    import win32gui
+    import win32print
+    import win32con
+    import cv2
+    import numpy as np
+    import pyautogui
+    from PIL import ImageGrab
+    from PIL import Image
     print('运行本程序前请确保原神游戏内图像设置已设置为独占全屏，否则会导致效果不佳')
     print('如果运行后原神游戏程序未被成功拉起，请检查游戏主程序路径是否已经正确设置')
     print('已设置的游戏主程序路径信息保存在本程序所在位置下的“yuanshen_path.txt”文件中')
