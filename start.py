@@ -15,6 +15,7 @@ if is_admin():
     import win32con
     import cv2
     import numpy as np
+    import psutil
     import pyautogui
     from PIL import ImageGrab
     from PIL import Image
@@ -79,11 +80,6 @@ if is_admin():
         # 判断是否满足启动条件
         if white_percentage >= 90:
             break
-    print(path)
-    # 原神，启动！
-    os.startfile(path)
-
-    print('原神，启动！！！！')
 
     # 创建白色过渡图片，以等待原神程序加载
 
@@ -94,7 +90,17 @@ if is_admin():
     cv2.namedWindow(out_win, cv2.WND_PROP_FULLSCREEN)
     cv2.setWindowProperty(out_win, cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
     cv2.imshow(out_win, img)
+
+    print(path)
+    # 原神，启动！
+    os.startfile(path)
     cv2.waitKey(60000)
+    print('原神，启动！！！！')
+    for proc in psutil.process_iter():
+        if proc.name() == 'YuanShen.exe':
+            print('原神已启动！！！！')
+            break
+
 
 else:
     ctypes.windll.shell32.ShellExecuteW(None, "runas", sys.executable, __file__, None, 1)  # 以管理员权限重新运行程序

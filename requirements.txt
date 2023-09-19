@@ -2,3 +2,4 @@ opencv-python~=4.8.0.76
 pyautogui~=0.9.54
 numpy~=1.25.2
 Pillow~=10.0.0
+psutil~=5.9.5
